@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Authentication from "./routes/auth/Authentication"
 import "./App.css"
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
         <></>
       ) : (
         // if false, The Authentication component shoule be rendered (Will be built in later tasks)
-        <></>
+        <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />
       )}
     </div>
   )

@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./general.css"
 
-function Button({label, className, onClick, icon}) {
+function Button({label, className, onClick, icon, type = "button"}) {
     return (
-        <button className={`button ${className || ''}`} onClick={onClick}>
-            {label}
+        <button type={type} className={`button ${className || ''}`} onClick={onClick}>
             {icon && <FontAwesomeIcon icon={icon} />}
+            {label}
         </button>
     )
 }
@@ -16,6 +16,7 @@ Button.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func.isRequired,
     icon: PropTypes.object,
+    type: PropTypes.string,
 }
 
 export default Button

@@ -128,10 +128,17 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    outline: none;
 }
 
 .button:hover {
     background-color: #9a000b;
+    border-color: transparent;
+}
+
+.button:focus,
+.button:focus-visible {
+    outline: none;
 }
 
 .button:active {
