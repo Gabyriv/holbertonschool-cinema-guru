@@ -1,10 +1,11 @@
 import PropTypes from "prop-types"
 import Header from "../../components/navigation/Header"
+import SideBar from "../../components/navigation/Sidebar"
 import "./dashboard.css"
 
 /**
  * Dashboard component - Main dashboard view for logged-in users
- * Contains the Header and other dashboard content
+ * Uses CSS Grid layout: Header on top, Sidebar + Content below
  */
 function Dashboard({ userUsername, setIsLoggedIn }) {
     return (
@@ -15,7 +16,16 @@ function Dashboard({ userUsername, setIsLoggedIn }) {
                 setIsLoggedIn={setIsLoggedIn} 
             />
             
-            {/* Dashboard content will be added here */}
+            {/* Main content area with sidebar and page content */}
+            <div className="dashboard-content">
+                {/* Navigation sidebar */}
+                <SideBar />
+                
+                {/* Main content area - routes will render here */}
+                <main className="dashboard-main">
+                    {/* Page content will be added here */}
+                </main>
+            </div>
         </div>
     )
 }

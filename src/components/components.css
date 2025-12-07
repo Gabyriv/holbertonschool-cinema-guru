@@ -1,0 +1,36 @@
+/* ================================
+   Miscellaneous Components Styles
+   ================================ */
+
+/* --------------------------------
+   Activity Component
+   -------------------------------- */
+.activity-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Username in activity - highlighted in red */
+.activity-username {
+    color: #bb000e;
+}
+
+/* Movie title in activity - highlighted in red */
+.activity-title {
+    color: #bb000e;
+}
+
