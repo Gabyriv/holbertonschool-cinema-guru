@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import { Routes, Route, Navigate } from "react-router-dom"
 import Header from "../../components/navigation/Header"
 import SideBar from "../../components/navigation/Sidebar"
 import "./dashboard.css"
@@ -6,6 +7,7 @@ import "./dashboard.css"
 /**
  * Dashboard component - Main dashboard view for logged-in users
  * Uses CSS Grid layout: Header on top, Sidebar + Content below
+ * Contains routing for Home, Favorites, and Watch Later pages
  */
 function Dashboard({ userUsername, setIsLoggedIn }) {
     return (
@@ -21,9 +23,21 @@ function Dashboard({ userUsername, setIsLoggedIn }) {
                 {/* Navigation sidebar */}
                 <SideBar />
                 
-                {/* Main content area - routes will render here */}
+                {/* Main content area - routes render here */}
                 <main className="dashboard-main">
-                    {/* Page content will be added here */}
+                    <Routes>
+                        {/* Home page route */}
+                        <Route path="/home" element={<HomePage />} />
+                        
+                        {/* Favorites page route */}
+                        <Route path="/favorites" element={<Favorites />} />
+                        
+                        {/* Watch Later page route */}
+                        <Route path="/watchlater" element={<WatchLater />} />
+                        
+                        {/* Redirect all other paths to /home */}
+                        <Route path="*" element={<Navigate to="/home" replace />} />
+                    </Routes>
                 </main>
             </div>
         </div>
