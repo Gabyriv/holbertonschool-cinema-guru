@@ -19,7 +19,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
         event.preventDefault()
 
         // Determine the endpoint based on _switch state
-        const endpoint = _switch ? "/api/auth/login" : "/api/auth/register"
+        const endpoint = _switch ? "http://localhost:8000/api/auth/login" : "http://localhost:8000/api/auth/register"
 
         // Send POST request with username and password
         axios.post(endpoint, { username, password })

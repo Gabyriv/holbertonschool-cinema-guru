@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Authentication from "./routes/auth/Authentication"
+import Dashboard from "./routes/dashboard/Dashboard"
 import "./App.css"
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     const accessToken = localStorage.getItem("accessToken")
     if (!accessToken) return
 
-    fetch("/api/auth/", {
+    fetch("http://localhost:8000/api/auth/", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${accessToken}`,
@@ -36,7 +37,7 @@ function App() {
     <div className="App">
       {isLoggedIn ? (
         // if true, The Dashboard component should be rendered (Will be built in later tasks)
-        <></>
+        <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
       ) : (
         // if false, The Authentication component shoule be rendered (Will be built in later tasks)
         <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />
