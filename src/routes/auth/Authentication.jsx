@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios"
 import PropTypes from "prop-types"
 import Button from "../../components/general/Button"
 import Login from "./Login"
@@ -8,13 +9,36 @@ import "./auth.css"
 function Authentication({ setIsLoggedIn, setUserUsername }) {
     // State for switching between Sign In and Sign Up
     const [_switch, setSwitch] = useState(true)
-    // State for form inputs (will be used in Login/Register components)
+    // State for form inputs
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
+    // Handle form submission for login or register
+    const handleSubmit = (event) => {
+        // Prevent default form submission behavior
+        event.preventDefault()
+
+        // Determine the endpoint based on _switch state
+        const endpoint = _switch ? "/api/auth/login" : "/api/auth/register"
+
+        // Send POST request with username and password
+        axios.post(endpoint, { username, password })
+            .then((response) => {
+                // On success, store the JWT token in localStorage
+                localStorage.setItem("accessToken", response.data.accessToken)
+                // Set the userUsername state to username
+                setUserUsername(username)
+                // Set the isLoggedIn state to true
+                setIsLoggedIn(true)
+            })
+            .catch((error) => {
+                console.error("Authentication error:", error)
+            })
+    }
+
     return (
         <div className="auth-page">
-            <form className="auth-form">
+            <form className="auth-form" onSubmit={handleSubmit}>
                 {/* Header buttons to switch between Sign In and Sign Up */}
                 <div className="auth-header">
                     <Button 

@@ -14,7 +14,7 @@ function Button({label, className, onClick, icon, type = "button"}) {
 Button.propTypes = {
     label: PropTypes.string.isRequired,
     className: PropTypes.string,
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
     icon: PropTypes.object,
     type: PropTypes.string,
 }

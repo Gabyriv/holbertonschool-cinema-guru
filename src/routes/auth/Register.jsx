@@ -5,12 +5,6 @@ import Button from "../../components/general/Button"
 import "./auth.css"
 
 function Register({ username, password, setUsername, setPassword }) {
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Register logic will be implemented later
-    }
-
     return (
         <>
             <div className="auth-inputs">
@@ -32,7 +26,7 @@ function Register({ username, password, setUsername, setPassword }) {
             <div className="auth-submit">
                 <Button 
                     label="Sign Up"
-                    onClick={handleSubmit}
+                    type="submit"
                     icon={faKey}
                 />
             </div>
