@@ -1,0 +1,185 @@
+/* ================================
+   General Components Styles
+   ================================ */
+
+/* --------------------------------
+   Input Component
+   -------------------------------- */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.input-container label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: #1c1c1c;
+}
+
+/* Light theme input (default) */
+.input-container input {
+    width: 100%;
+    height: 21px;
+    padding: 4px 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1c1c1c;
+    border: none;
+    border-bottom: 1px solid #bb000e;
+    outline: none;
+}
+
+.input-container input:focus {
+    border-bottom: 2px solid #bb000e;
+}
+
+/* Dark theme input */
+.input-container.dark label {
+    color: #ffffff;
+}
+
+.input-container.dark input {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-bottom: 1px solid #bb000e;
+}
+
+/* Icon styling inside input */
+.input-container .icon {
+    color: #1c1c1c;
+    font-size: 16px;
+}
+
+.input-container.dark .icon {
+    color: #ffffff;
+}
+
+/* --------------------------------
+   SelectInput Component
+   -------------------------------- */
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.select-container label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: #1c1c1c;
+}
+
+.select-container select {
+    width: 100%;
+    height: 21px;
+    padding: 0 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1c1c1c;
+    border: none;
+    border-bottom: 1px solid #bb000e;
+    outline: none;
+    cursor: pointer;
+}
+
+.select-container select:focus {
+    border-bottom: 2px solid #bb000e;
+}
+
+/* Dark theme select */
+.select-container.dark label {
+    color: #ffffff;
+}
+
+.select-container.dark select {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-bottom: 1px solid #bb000e;
+}
+
+/* --------------------------------
+   Button Component
+   -------------------------------- */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #bb000e;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #9a000b;
+}
+
+.button:active {
+    background-color: #7a0009;
+}
+
+/* --------------------------------
+   SearchBar Component
+   -------------------------------- */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 28px;
+    padding: 0 12px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.search-bar input {
+    flex: 1;
+    height: 100%;
+    padding: 0 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+    color: #1c1c1c;
+    border: none;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #999999;
+}
+
+.search-bar.dark input::placeholder {
+    color: #666666;
+}
+
+/* Dark theme search bar */
+.search-bar.dark {
+    background-color: #1c1c1c;
+}
+
+.search-bar.dark input {
+    color: #ffffff;
+}
+
+.search-bar.dark input::placeholder {
+    color: #666666;
+}
