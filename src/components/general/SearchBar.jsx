@@ -9,7 +9,12 @@ function SearchBar({title, setTitle}) {
 
     return (
         <div className="search-bar">
-            <input type="text" value={title} onChange={handleInput} />
+            <input 
+                type="text" 
+                value={title} 
+                onChange={handleInput}
+                placeholder="Search Movies"
+            />
         </div>
     )
 }

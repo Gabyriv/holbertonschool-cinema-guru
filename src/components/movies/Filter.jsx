@@ -51,29 +51,27 @@ function Filter({
             {/* Search bar for title search */}
             <SearchBar title={title} setTitle={setTitle} />
 
-            {/* Year range inputs */}
+            {/* Year range and sort inputs */}
             <div className="filter-year">
                 <Input 
-                    label="Min Year"
+                    label="Min Date:"
                     type="number"
                     value={minYear}
                     setValue={setMinYear}
                 />
                 <Input 
-                    label="Max Year"
+                    label="Max Date:"
                     type="number"
                     value={maxYear}
                     setValue={setMaxYear}
                 />
+                <SelectInput 
+                    label="Sort:"
+                    options={sortOptions}
+                    value={sort}
+                    setValue={setSort}
+                />
             </div>
-
-            {/* Sort select input */}
-            <SelectInput 
-                label="Sort By"
-                options={sortOptions}
-                value={sort}
-                setValue={setSort}
-            />
 
             {/* Genre tags list */}
             <ul className="filter-tags">

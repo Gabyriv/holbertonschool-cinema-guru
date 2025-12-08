@@ -22,8 +22,8 @@ function SideBar() {
     const [small, setSmall] = useState(true)
     // State for storing user activities
     const [activities, setActivities] = useState([])
-    // State for showing/hiding activities section
-    const [showActivities, setShowActivities] = useState(false)
+    // State for showing/hiding activities section (default: true to show activities)
+    const [showActivities, setShowActivities] = useState(true)
 
     // Hook for programmatic navigation
     const navigate = useNavigate()

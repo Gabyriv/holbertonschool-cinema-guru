@@ -2,6 +2,9 @@ import PropTypes from "prop-types"
 import { Routes, Route, Navigate } from "react-router-dom"
 import Header from "../../components/navigation/Header"
 import SideBar from "../../components/navigation/Sidebar"
+import HomePage from "./HomePage"
+import Favorites from "./Favorites"
+import WatchLater from "./WatchLater"
 import "./dashboard.css"
 
 /**
