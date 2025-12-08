@@ -1,16 +1,112 @@
-# React + Vite
+# Cinema Guru 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern movie discovery and tracking application built with React. Browse movies, add them to your favorites, and create a watch later list.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication** - Register and login to access personalized features
+- **Movie Discovery** - Browse and search movies with advanced filtering options
+- **Favorites** - Save your favorite movies for quick access
+- **Watch Later** - Create a list of movies you want to watch
+- **Activity Feed** - Track recent activity across the platform
+- **Responsive Sidebar** - Collapsible navigation with hover expansion
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, React Router DOM 7
+- **Build Tool**: Vite
+- **HTTP Client**: Axios
+- **Icons**: FontAwesome
+- **Styling**: CSS (custom styles)
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js (v18 or higher)
+- Yarn or npm
+- Docker & Docker Compose (for backend)
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/holbertonschool-cinema-guru.git
+cd holbertonschool-cinema-guru
+```
+
+### 2. Install dependencies
+
+```bash
+yarn install
+# or
+npm install
+```
+
+### 3. Set up the backend
+
+Clone and run the backend API:
+
+```bash
+git clone https://github.com/hs-hq/holbertonschool-cinema-guru-API.git
+cd holbertonschool-cinema-guru-API
+docker-compose up --build
+```
+
+The API will be available at `http://localhost:8000`
+
+### 4. Start the development server
+
+```bash
+yarn dev
+# or
+npm run dev
+```
+
+The app will be available at `http://localhost:3000`
+
+## Project Structure
+
+```txt
+src/
+├── components/
+│   ├── general/          # Reusable UI components (Button, Input, SearchBar, SelectInput)
+│   ├── movies/           # Movie-related components (MovieCard, Filter, Tag)
+│   └── navigation/       # Navigation components (Header, Sidebar)
+├── routes/
+│   ├── auth/             # Authentication pages (Login, Register)
+│   └── dashboard/        # Dashboard pages (HomePage, Favorites, WatchLater)
+├── App.jsx               # Main app component with routing
+├── main.jsx              # Entry point
+└── index.css             # Global styles
+```
+
+## API Endpoints
+
+The app communicates with the backend API:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/auth/register` | POST | Register a new user |
+| `/api/auth/login` | POST | Login user |
+| `/api/titles/advancedsearch` | GET | Search movies with filters |
+| `/api/titles/favorite/` | GET/POST/DELETE | Manage favorite movies |
+| `/api/titles/watchlater/` | GET/POST/DELETE | Manage watch later list |
+| `/api/activity` | GET | Get recent activities |
+
+## Screenshots
+
+### Home Page
+
+Browse and filter movies by genre, year, and more.
+
+### Favorites & Watch Later
+
+View your saved movies with a beautiful centered title design.
+
+## Author
+
+- **Gabriel Rivera** - Holberton School
+
+## License
+
+This project is part of the Holberton School curriculum.
